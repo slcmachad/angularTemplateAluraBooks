@@ -12,6 +12,14 @@
       ngModel
       required
       minlength="2">
+      <div *ngIf="(f.controls['nome']?.invalid && f.controls['nome']?.touched) || f.controls['nome']?.dirty">
+        <span class="erro__texto" *ngIf="f.controls['nome']?.errors?.['required']">
+          Campo nome é obrigatório.
+        </span>
+        <span class="erro__texto" *ngIf="f.controls['nome']?.errors?.['minlength']">
+          Campo nome necessita de dois ou mais caracteres.
+        </span>
+      </div>
     </div>
     <div class="formulario__dupla">
       <div class="formulario__campo">
