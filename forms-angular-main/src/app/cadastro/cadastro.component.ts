@@ -18,7 +18,8 @@ export class CadastroComponent implements OnInit {
     if(form.valid){
       this.router.navigate(['sucesso']);
     }else{
-      console.log(form);
+      console.log(form.controls);
     }
+    console.log(form.controls);
   }
 }
